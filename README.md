@@ -27,6 +27,7 @@ Then run `pnpm install`.
 The plugin bundles these dependencies internally:
 - `@eslint/js` - ESLint's recommended rules
 - `@stylistic/eslint-plugin` - Code formatting rules
+- `eslint-plugin-import` - Import/export syntax validation and ordering
 
 You don't need to install these separately.
 
@@ -67,6 +68,12 @@ export default [
       // Override or add rules
       'stylistic/indent': ['error', 4], // Use 4 spaces instead of 2
       'stylistic/quotes': ['error', 'double'], // Use double quotes
+
+      // Customize import ordering with project-specific pathGroups
+      'import/order': ['error', {
+        ...egjiri.rules['import/order'][1],
+        pathGroups: [{ pattern: '$alias/**', group: 'internal' }],
+      }],
     },
   },
 ];
@@ -81,6 +88,9 @@ All rules from `@eslint/js` recommended config
 
 ### Additional Built-in ESLint Rules
 - `curly`: Require braces for all control statements
+
+### Import Plugin Rules
+- `import/order`: Enforce consistent import ordering (alphabetized, grouped by type)
 
 ### @stylistic Rules
 - `stylistic/array-bracket-spacing`: No spaces inside array brackets

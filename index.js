@@ -1,13 +1,27 @@
 import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
+import importPlugin from 'eslint-plugin-import';
 
-/** @type {{ stylistic: typeof stylistic }} */
-const plugins = {stylistic };
+/** @type {{ stylistic: typeof stylistic, import: typeof importPlugin }} */
+const plugins = { stylistic, import: importPlugin };
 
 /** @type {import('eslint').Linter.RulesRecord} */
 const rules = {
   // Built-in ESLint Rules (No Stylistic Equivalents)
   'curly': ['error', 'all'], // Require braces for all control statements (Ex. if, else, for, while)
+
+  // Import Plugin Rules
+  'import/no-duplicates': ['error'], // Merge imports from the same module
+  'import/order': ['error', { // Enforce consistent import ordering
+    // order options: https://github.com/import-js/eslint-plugin-import/blob/v2.32.0/docs/rules/order.md#options
+    groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'type'],
+    pathGroupsExcludedImportTypes: [],
+    'newlines-between': 'never',
+    alphabetize: { order: 'asc', caseInsensitive: true },
+    named: true,
+    warnOnUnassignedImports: true,
+    sortTypesGroup: true,
+  }],
 
   // Stylistic Plugin Rules
   'stylistic/array-bracket-spacing': ['error', 'never'], // No spaces inside array brackets
@@ -36,6 +50,7 @@ export default {
     version: '0.0.1',
   },
   plugins,
+  rules,
   configs: {
     recommended: [
       js.configs.recommended,
