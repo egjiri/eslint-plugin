@@ -1,0 +1,18 @@
+{
+  "name": "@egjiri/eslint-plugin",
+  "version": "0.0.1",
+  "description": "ESLint configuration for my personal code style",
+  "repository": "https://github.com/egjiri/eslint-plugin",
+  "author": "Endri Gjiri",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "exports": "./index.js",
+  "dependencies": {
+    "@eslint/js": "^9.39.1",
+    "@stylistic/eslint-plugin": "^5.6.1"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
