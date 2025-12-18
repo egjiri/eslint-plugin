@@ -130,3 +130,31 @@ All rules from `@eslint/js` recommended config
 - `stylistic/semi`: Require semicolons
 - `stylistic/space-in-parens`: No spaces inside parentheses
 - `stylistic/space-infix-ops`: Spaces around operators
+
+## Release
+
+This project uses **automated publishing** through GitHub Actions. Publishing happens automatically when you create and push a version tag.
+
+### How to Release:
+
+1. **Update the version** in `package.json`:
+   ```bash
+   # For a patch release (0.0.1 → 0.0.2)
+   pnpm version patch -m "Upgrade version to %s"
+
+   # For a minor release (0.0.1 → 0.1.0)
+   pnpm version minor -m "Upgrade version to %s"
+
+   # For a major release (0.0.1 → 1.0.0)
+   pnpm version major -m "Upgrade version to %s"
+   ```
+
+2. **Push the tag** to trigger the release workflow:
+   ```bash
+   git push origin main --tags
+   ```
+
+### What happens automatically:
+- 🏷️ **GitHub Release** is created with the tag name
+- 📦 **Published to NPM** with public access
+- ✅ **No manual intervention** required
