@@ -4,7 +4,26 @@ Personal ESLint configuration with code style rules and best practices.
 
 ## Installation
 
-Add to your project's `package.json`:
+### From NPM (Recommended)
+
+```bash
+pnpm add -D @egjiri/eslint-plugin eslint
+```
+
+Or add to your project's `package.json`:
+
+```json
+{
+  "devDependencies": {
+    "@egjiri/eslint-plugin": "^0.0.1",
+    "eslint": "^9.0.0"
+  }
+}
+```
+
+### Local Development (Link)
+
+For local development or when working on the plugin itself:
 
 ```json
 {
