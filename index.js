@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
+import pkg from './package.json' with { type: 'json' };
 
 /** @type {{ stylistic: typeof stylistic, import: typeof importPlugin }} */
 const plugins = { stylistic, import: importPlugin };
@@ -46,8 +47,8 @@ const rules = {
 
 export default {
   meta: {
-    name: '@egjiri/eslint-plugin',
-    version: '0.0.1',
+    name: pkg.name,
+    version: pkg.version,
   },
   plugins,
   rules,

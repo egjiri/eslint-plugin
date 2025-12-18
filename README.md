@@ -15,7 +15,7 @@ Or add to your project's `package.json`:
 ```json
 {
   "devDependencies": {
-    "@egjiri/eslint-plugin": "^0.0.1",
+    "@egjiri/eslint-plugin": "^1.0.0",
     "eslint": "^9.0.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@egjiri/eslint-plugin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "ESLint configuration for my personal code style",
   "repository": "https://github.com/egjiri/eslint-plugin",
   "author": "Endri Gjiri",
